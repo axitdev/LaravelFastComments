@@ -2,8 +2,8 @@
 
 namespace Axitdev\LaravelFastComments\Tests\Models;
 
-use Axitdev\LaravelFastComments\Traits\HasComments;
 use Illuminate\Database\Eloquent\Model;
+use Axitdev\LaravelFastComments\Traits\HasComments;
 
 class Post extends Model
 {

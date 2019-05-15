@@ -15,12 +15,14 @@ abstract class TestCase extends \Orchestra\Testbench\TestCase
         $this->setUpDatabase();
         $this->createUser();
     }
+
     protected function getPackageProviders($app)
     {
         return [
             LaravelFastCommentsServiceProvider::class,
         ];
     }
+
     protected function getEnvironmentSetUp($app)
     {
         $app['config']->set('auth.providers.users.model', User::class);
@@ -32,9 +34,10 @@ abstract class TestCase extends \Orchestra\Testbench\TestCase
         ]);
         $app['config']->set('app.key', 'base64:wo+yBTO9CsoYw4WEO9i4O/u89n9EWt2AgGzcy9QwAq8=');
     }
+
     protected function setUpDatabase()
     {
-        include_once __DIR__ . '/../migrations/0000_00_00_000000_create_comments_table.php';
+        include_once __DIR__.'/../migrations/0000_00_00_000000_create_comments_table.php';
         (new \CreateCommentsTable())->up();
         $this->app['db']->connection()->getSchemaBuilder()->create('posts', function (Blueprint $table) {
             $table->increments('id');
@@ -42,12 +45,13 @@ abstract class TestCase extends \Orchestra\Testbench\TestCase
             $table->timestamps();
         });
     }
+
     protected function createUser()
     {
         User::forceCreate([
             'name' => 'User',
             'email' => 'user@test.com',
-            'password' => 'test'
+            'password' => 'test',
         ]);
     }
 }
