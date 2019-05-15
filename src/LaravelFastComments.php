@@ -13,8 +13,8 @@ class LaravelFastComments extends Model
      * @var string
      */
     protected $table = 'comments';
-	
-	/**
+
+    /**
      * The attributes that are mass assignable.
      *
      * @var array
@@ -38,7 +38,7 @@ class LaravelFastComments extends Model
      */
     protected function getAuthModelName()
     {
-        if (!is_null(config('auth.providers.users.model'))) {
+        if (! is_null(config('auth.providers.users.model'))) {
             return config('auth.providers.users.model');
         }
         throw new Exception('Could not determine the commentator model name.');

@@ -2,8 +2,8 @@
 
 namespace Axitdev\LaravelFastComments\Tests;
 
-use Axitdev\LaravelFastComments\Tests\Models\Post;
 use Illuminate\Foundation\Auth\User;
+use Axitdev\LaravelFastComments\Tests\Models\Post;
 
 class LaravelFastCommentsTest extends TestCase
 {
@@ -15,7 +15,7 @@ class LaravelFastCommentsTest extends TestCase
         auth()->login($user);
 
         $post = Post::create([
-            'title' => 'Post title'
+            'title' => 'Post title',
         ]);
         $post->comment('here is the first comment');
         $post->comment('here is the second comment');
@@ -32,7 +32,7 @@ class LaravelFastCommentsTest extends TestCase
         auth()->login($user);
 
         $post = Post::create([
-            'title' => 'Post title'
+            'title' => 'Post title',
         ]);
         $comment = $post->comment('here is a comment');
         $this->assertSame($user->toArray(), $comment->commentator->toArray());
@@ -44,7 +44,7 @@ class LaravelFastCommentsTest extends TestCase
         $user = User::first();
 
         $post = Post::create([
-            'title' => 'Post title'
+            'title' => 'Post title',
         ]);
         $comment = $post->comment('here is a comment', $user);
         $this->assertSame($user->toArray(), $comment->commentator->toArray());

@@ -2,14 +2,14 @@
 
 namespace Axitdev\LaravelFastComments\Traits;
 
-use Axitdev\LaravelFastComments\LaravelFastComments;
 use Illuminate\Database\Eloquent\Model;
+use Axitdev\LaravelFastComments\LaravelFastComments;
 use Illuminate\Database\Eloquent\Relations\MorphMany;
 
 trait HasComments
 {
     /**
-     * Return all comments for model
+     * Return all comments for model.
      *
      * @return MorphMany
      */
@@ -34,6 +34,4 @@ trait HasComments
 
         return $this->comments()->save($comment);
     }
-
-
 }
