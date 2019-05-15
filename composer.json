@@ -1,0 +1,51 @@
+{
+    "name": "axitdev/laravelfastcomments",
+    "description": "Simple way to add comments to your Laravel Eloquent models",
+    "keywords": [
+        "axitdev",
+        "laravelfastcomments"
+    ],
+    "homepage": "https://github.com/axitdev/laravelfastcomments",
+    "license": "MIT",
+    "type": "library",
+    "authors": [
+        {
+            "name": "Oleksii Ivanov",
+            "email": "axitdev@gmail.com",
+            "role": "Developer"
+        }
+    ],
+    "require": {
+        "php": "^7.1",
+        "illuminate/support": "~5.6.0|~5.7.0|~5.8.0"
+    },
+    "require-dev": {
+        "orchestra/testbench": "^3.6",
+        "phpunit/phpunit": "^7.0"
+    },
+    "autoload": {
+        "psr-4": {
+            "Axitdev\\LaravelFastComments\\": "src"
+        }
+    },
+    "autoload-dev": {
+        "psr-4": {
+            "Axitdev\\LaravelFastComments\\Tests\\": "tests"
+        }
+    },
+    "scripts": {
+        "test": "vendor/bin/phpunit",
+        "test-coverage": "vendor/bin/phpunit --coverage-html coverage"
+
+    },
+    "config": {
+        "sort-packages": true
+    },
+    "extra": {
+        "laravel": {
+            "providers": [
+                "Axitdev\\LaravelFastComments\\LaravelFastCommentsServiceProvider"
+            ]
+        }
+    }
+}
